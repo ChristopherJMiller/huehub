@@ -6,9 +6,9 @@
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
-import App from './hello_react';
-import WebpackerReact from 'webpacker-react';
+import React from 'react'
+import { render } from 'react-dom'
 
-import "./application.css";
+import App from '../app/containers/App'
 
-WebpackerReact.setup({App});
+render(<App />, document.getElementById('app'))
