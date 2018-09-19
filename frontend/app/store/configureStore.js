@@ -6,7 +6,7 @@ import reducers from '../reducers'
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const reducer = combineReducers({
-  ...reducers,
+  reducers,
   routing: routerReducer,
 })
 

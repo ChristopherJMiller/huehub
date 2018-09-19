@@ -3,10 +3,11 @@ import { Router, Route } from 'react-router'
 import createBrowserHistory from 'history/createBrowserHistory'
 import { Provider } from 'react-redux'
 
+import initialState from '../../store/initialState'
 import configureStore from '../../store/configureStore'
 import routes from '../../routes'
 
-const store = configureStore()
+const store = configureStore(initialState)
 const history = createBrowserHistory()
 
 import Home from '../pages/Home'

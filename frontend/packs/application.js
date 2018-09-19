@@ -9,6 +9,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 
+import 'typeface-roboto'
 import App from '../app/containers/App'
 
 render(<App />, document.getElementById('app'))

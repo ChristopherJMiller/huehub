@@ -1,0 +1,1 @@
+json.light_controllers @light_controllers
