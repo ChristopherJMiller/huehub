@@ -11,6 +11,8 @@ const store = configureStore(initialState)
 const history = createBrowserHistory()
 
 import Home from '../pages/Home'
+import NewLightController from '../pages/LightContollers/new'
+
 
 class App extends Component { // eslint-disable-line react/prefer-stateless-function
 
@@ -18,7 +20,10 @@ class App extends Component { // eslint-disable-line react/prefer-stateless-func
     return (
       <Provider store={store}>
         <Router history={history}>
-          <Route exact path='/' component={Home} />
+          <div>
+            <Route exact path='/' component={Home} />
+            <Route path='/light_contollers/new' component={NewLightController} />
+          </div>
         </Router>
       </Provider>
     )

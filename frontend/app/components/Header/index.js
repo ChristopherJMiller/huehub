@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router'
+import { NavLink } from 'react-router-dom'
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -140,9 +140,11 @@ class Header extends Component {
         <List>
           {
             routeData.map((route) =>
-            <ListItem button>
-              <ListItemText primary={route.name} />
-            </ListItem>
+            <NavLink to={route.path} activeStyle={{ textDecoration: 'none' }}>
+              <ListItem button>
+                  <ListItemText primary={route.name} />
+              </ListItem>
+            </NavLink>
             )
           }
         </List>

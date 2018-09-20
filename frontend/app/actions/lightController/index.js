@@ -17,7 +17,7 @@ function gettingLightControllers() {
 
 export function getLightControllers(dispatch) {
   dispatch(gettingLightControllers())
-  return fetch(`/light_controller.json`)
+  return fetch(`/api/light_controller.json`)
       .then(response => response.json())
       .then(json => dispatch(updateLightControllers(json.light_controllers)))
 }

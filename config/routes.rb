@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :light_controller, only: [:index]
+  scope '/api' do
+    resources :light_controller, only: [:index]
+  end
 
-  root to: 'app#index'
+  root to:'app#index'
+  match '*path', to: 'app#index', via: [:get]
 end
