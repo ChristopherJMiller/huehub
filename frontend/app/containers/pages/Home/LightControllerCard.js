@@ -20,19 +20,25 @@ const styles = {
 class LightControllerCard extends Component {
   render() {
     const { classes } = this.props;
-
-    return this.props.lightControllers.map((lightController) => (
-      <Card className={classes.card}>
-        <CardContent>
-          <Typography className={classes.title} color="textSecondary">
-            {lightController.hueType}
-          </Typography>
-          <Typography variant="headline" component="h2">
-            {lightController.name}
-          </Typography>
-        </CardContent>
-      </Card>
-    ))
+    let component = 'No Light Controllers Found.';
+    if (typeof this.props.lightControllers != "undefined") {
+      component = this.props.lightControllers.map((lightController) => (
+        <Card className={classes.card}>
+          <CardContent>
+            <Typography className={classes.title} color="textSecondary">
+              {lightController.hueType.toUpperCase()}
+            </Typography>
+            <Typography variant="headline" component="h2">
+              {lightController.name}
+            </Typography>
+            <Typography component="p">
+              Connected to {this.props.lights[lightController.hueID].name}
+            </Typography>
+          </CardContent>
+        </Card>
+      ))
+    }
+    return component;
   }
 }
 

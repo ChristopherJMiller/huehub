@@ -1,3 +1,3 @@
 class LightController < ApplicationRecord
-  enum hueType: { light: 0, lightMimic: 1, lightSchedule: 2, lightGroup: 3 }
+  enum hueType: { light_mimic: 0, light_schedule: 1 }
 end

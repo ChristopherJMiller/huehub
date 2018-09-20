@@ -12,4 +12,6 @@ import { render } from 'react-dom'
 import 'typeface-roboto'
 import App from '../app/containers/App'
 
+require('dotenv').config()
+
 render(<App />, document.getElementById('app'))

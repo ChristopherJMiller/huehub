@@ -6,6 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { getLightControllers } from '../../../actions/lightController'
+import { getLights } from '../../../actions/bridge/lights'
 
 import PageWrapper from '../../PageWrapper'
 
@@ -17,20 +18,21 @@ class Home extends Component {
   componentDidMount() {
     const { dispatch } = this.props
     dispatch(getLightControllers)
+    dispatch(getLights)
   }
 
   render() {
-    let content = (<LightControllerCards lightControllers={this.props.lightControllers} />)
+    let lightControllers = (<LightControllerCards lightControllers={this.props.lightControllers} lights={this.props.lights} />)
 
-    if (this.props.gettingControllers) {
-      content = (<CircularProgress />)
+    if (this.props.gettingControllers || this.props.gettingLights) {
+      lightControllers = (<CircularProgress />)
     }
     return (
       <PageWrapper>
         <Typography variant="display1" gutterBottom>
           All Light Controllers
         </Typography>
-        {content}
+        {lightControllers}
       </PageWrapper>
     );
   }
@@ -38,8 +40,10 @@ class Home extends Component {
 
 function mapStateToProps (state) {
   return ({
-    lightControllers: state.reducers.lightControllers,
-    gettingControllers: state.reducers.gettingControllers
+    lightControllers: state.reducers.lightController.lightControllers,
+    gettingControllers: state.reducers.lightController.gettingControllers,
+    gettingLights: state.reducers.lights.gettingLights,
+    lights: state.reducers.lights.lights
   })
 }
 

@@ -1,3 +1,9 @@
-import lightController from './lightController'
+import { combineReducers } from 'redux'
 
-export default lightController
+import lightController from './lightController'
+import lights from './lights'
+
+export default combineReducers({
+  lightController,
+  lights
+})
