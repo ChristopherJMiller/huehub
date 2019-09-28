@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Router, Route } from 'react-router'
-import createBrowserHistory from 'history/createBrowserHistory'
 import { Provider } from 'react-redux'
 
 import initialState from '../../store/initialState'
@@ -8,7 +7,7 @@ import configureStore from '../../store/configureStore'
 import routes from '../../routes'
 
 const store = configureStore(initialState)
-const history = createBrowserHistory()
+const history = require("history").createBrowserHistory()
 
 import Home from '../pages/Home'
 import NewLightController from '../pages/LightContollers/new'

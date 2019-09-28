@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header'
 
-import withWidth from '@material-ui/core/withWidth';
+import {Container} from '@material-ui/core';
 
 const components = {
   sm: {
@@ -31,10 +31,10 @@ function PageWrapper(props) {
   return (
     <div>
       <Header>
-        <div style={style}>{ children }</div>
+        <Container maxWidth="md">{ children }</Container>
       </Header>
     </div>
   )
 }
 
-export default withWidth()(PageWrapper)
+export default PageWrapper
