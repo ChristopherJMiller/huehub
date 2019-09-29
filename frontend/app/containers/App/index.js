@@ -4,7 +4,6 @@ import { Provider } from 'react-redux'
 
 import initialState from '../../store/initialState'
 import configureStore from '../../store/configureStore'
-import routes from '../../routes'
 
 const store = configureStore(initialState)
 const history = require("history").createBrowserHistory()

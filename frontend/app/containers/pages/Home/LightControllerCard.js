@@ -5,8 +5,6 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
-import PageWrapper from '../../PageWrapper'
-
 const styles = {
   card: {
     maxWidth: 275,
@@ -28,7 +26,7 @@ class LightControllerCard extends Component {
             <Typography className={classes.title} color="textSecondary">
               {lightController.hueType.toUpperCase()}
             </Typography>
-            <Typography variant="headline" component="h2">
+            <Typography variant="h4" component="h4">
               {lightController.name}
             </Typography>
             <Typography component="p">

@@ -29,7 +29,7 @@ class Home extends Component {
     }
     return (
       <PageWrapper>
-        <Typography variant="display1" gutterBottom>
+        <Typography variant="h4">
           All Light Controllers
         </Typography>
         {lightControllers}
